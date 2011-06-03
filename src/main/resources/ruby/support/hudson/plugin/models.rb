@@ -23,3 +23,12 @@ end
 TestRootAction.new.tap do |action|
   @java.addExtension(@wrappers[action] = Hudson::Plugin::RootAction::Wrapper.new(action))
 end
+
+Hudson::Plugin::Descriptor.new("test_root_action2", TestRootAction2, self, Java::HudsonModel::RootAction.java_class).tap do |d|
+  @java.addExtension(d)
+  descriptors[TestRootAction2] = d
+end
+
+TestRootAction2.new.tap do |action|
+  @java.addExtension(@wrappers[action] = Hudson::Plugin::RootAction::Wrapper.new(action))
+end

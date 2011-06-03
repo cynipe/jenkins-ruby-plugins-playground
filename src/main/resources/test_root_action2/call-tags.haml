@@ -1,0 +1,10 @@
+- l = taglib("/lib/layout")
+- l.layout(:title => "Hello from HAML") do
+  - l.main_panel do
+    %h1
+      Hello from HAML
+    %p
+      With proper Jenkins UI tags
+      %b= it
+    %script
+      YUI.console("hello")
